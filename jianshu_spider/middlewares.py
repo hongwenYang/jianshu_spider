@@ -123,5 +123,5 @@ class SeleniumDownloadMidleware(object):
         except:
             pass
         source = self.driver.page_source
-        response = HtmlResponse(url=self.driver.current_url, body=source, request=request,encoding='utf-8')
+        response = HtmlResponse(url=self.driver.current_url, body=source, request=request, encoding='utf-8')
         return response
