@@ -16,3 +16,8 @@ class ArticleItem(scrapy.Item):
     avatar = scrapy.Field()
     pub_time = scrapy.Field()
     content = scrapy.Field()
+    read_count = scrapy.Field()
+    like_count = scrapy.Field()
+    word_count = scrapy.Field()
+    subjects = scrapy.Field()
+    comment_count = scrapy.Field()

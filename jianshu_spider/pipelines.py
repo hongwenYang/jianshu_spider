@@ -46,7 +46,7 @@ class JianshuSpiderPipeline:
 class JianshuTwistedPipeline(object):
     def __init__(self):
         dbparams = {
-            'host': '172.16.10.30',
+            'host': 'localhost',
             'port': 3306,
             'user': 'root',
             'password': 'WC85roj5IfwOhIEK',

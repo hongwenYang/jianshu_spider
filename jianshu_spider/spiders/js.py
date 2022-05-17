@@ -27,6 +27,9 @@ class JsSpider(CrawlSpider):
         url1 = url.split('?')[0]
         article_id = url1.split('/')[-1]
         content = response.xpath("//article[@class='_2rhmJa']").get()
+        word_count = response.xpath("//div[@class='s-dsoj']/span/text()").get()
+        read_count = response.xpath("//div[@class='s-dsoj']/span/text()").get()
+        subjects = ",".join(response.xpath("//div[@class='_2Nttfz']/a/span/text()").getall())
         item = ArticleItem(
             title=title,
             author=author,
@@ -34,6 +37,9 @@ class JsSpider(CrawlSpider):
             article_id=article_id,
             pub_time=pub_time,
             origin_url=response.url,
-            content=content
+            content=content,
+            word_count=word_count,
+            read_count=read_count,
+            subjects=subjects
         )
         yield item
